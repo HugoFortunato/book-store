@@ -48,9 +48,9 @@ export default function Home() {
         {filteredBooks.map((book) => (
           <li key={book.id}>
             {book.title} - {book.author} -{' '}
-            {book.rented ? 'Alugado' : 'Disponível'}
+            {book.rented ? 'Rented' : 'Available'}
             {!book.rented && (
-              <button onClick={() => handleRentBook(book.id)}>Alugar</button>
+              <button onClick={() => handleRentBook(book.id)}>Rent</button>
             )}
             <button onClick={() => handleBookDetail(book.id, book)}>
               Book Detail

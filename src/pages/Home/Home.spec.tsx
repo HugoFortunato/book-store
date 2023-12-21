@@ -29,7 +29,7 @@ describe('<Home />', () => {
     expect(getByPlaceholderText('Pesquisar Livros')).toBeInTheDocument()
   })
 
-  it('should call handleRentBook when "Alugar" button is clicked', () => {
+  it('should call handleRentBook when "Rent" button is clicked', () => {
     const store: MockStoreEnhanced<unknown, {}> = mockStore({
       books: {
         books: [
@@ -47,7 +47,7 @@ describe('<Home />', () => {
       </Provider>,
     )
 
-    const alugarButton = getByText('Alugar')
+    const alugarButton = getByText('Rent')
     fireEvent.click(alugarButton)
 
     expect(store.getActions()).toContainEqual({

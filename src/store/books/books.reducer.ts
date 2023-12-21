@@ -22,8 +22,8 @@ type BookState = {
 
 const initialState: BookState = {
   books: [
-    { id: 1, title: 'Livro 1', author: 'Autor 1', rented: false },
-    { id: 2, title: 'Livro 2', author: 'Autor 2', rented: false },
+    { id: 1, title: 'Book 1', author: 'Author 1', rented: false },
+    { id: 2, title: 'Book 2', author: 'Author 2', rented: false },
   ],
   selectedBook: null,
 }

@@ -46,21 +46,21 @@ const BookDetails: React.FC<BookDetailsProps> = () => {
 
   return (
     <div>
-      <h1>Detalhes do Livro</h1>
+      <h1>Book detail</h1>
 
-      <p data-testid="book-title">Título: {showSelectedBook?.title}</p>
-      <p data-testid="book-author">Autor: {showSelectedBook?.author}</p>
+      <p data-testid="book-title">Title: {showSelectedBook?.title}</p>
+      <p data-testid="book-author">Author: {showSelectedBook?.author}</p>
 
       {isBookRented ? (
-        <p>Livro alugado.</p>
+        <p>Book was rented</p>
       ) : (
         <>
           <div>
             <Input
               type="text"
               value={editedTitle}
-              label="Título"
-              placeholder="Título"
+              label="Title"
+              placeholder="Title"
               onInputChange={(value) => setEditedTitle(value)}
             />
           </div>
@@ -68,14 +68,14 @@ const BookDetails: React.FC<BookDetailsProps> = () => {
             <Input
               type="text"
               value={editedAuthor}
-              label="Autor"
-              placeholder="Autor"
+              label="Author"
+              placeholder="Author"
               onInputChange={(value) => setEditedAuthor(value)}
             />
           </div>
 
-          <button onClick={handleEditBook}>Salvar Edições</button>
-          <button onClick={handleRemoveBook}>Remover Livro</button>
+          <button onClick={handleEditBook}>Save</button>
+          <button onClick={handleRemoveBook}>Remove</button>
         </>
       )}
     </div>
