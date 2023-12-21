@@ -11,6 +11,7 @@ interface BookDetailsProps {
 
 const BookDetails: React.FC<BookDetailsProps> = () => {
   const showSelectedBook = useSelector(getSelectedBook)
+  const isBookRented = showSelectedBook?.rented
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -49,27 +50,34 @@ const BookDetails: React.FC<BookDetailsProps> = () => {
 
       <p data-testid="book-title">Título: {showSelectedBook?.title}</p>
       <p data-testid="book-author">Autor: {showSelectedBook?.author}</p>
-      <button onClick={handleEditBook}>Salvar Edições</button>
-      <button onClick={handleRemoveBook}>Remover Livro</button>
 
-      <div>
-        <Input
-          type="text"
-          value={editedTitle}
-          label="Título"
-          placeholder="Título"
-          onInputChange={(value) => setEditedTitle(value)}
-        />
-      </div>
-      <div>
-        <Input
-          type="text"
-          value={editedAuthor}
-          label="Autor"
-          placeholder="Autor"
-          onInputChange={(value) => setEditedAuthor(value)}
-        />
-      </div>
+      {isBookRented ? (
+        <p>Livro alugado.</p>
+      ) : (
+        <>
+          <div>
+            <Input
+              type="text"
+              value={editedTitle}
+              label="Título"
+              placeholder="Título"
+              onInputChange={(value) => setEditedTitle(value)}
+            />
+          </div>
+          <div>
+            <Input
+              type="text"
+              value={editedAuthor}
+              label="Autor"
+              placeholder="Autor"
+              onInputChange={(value) => setEditedAuthor(value)}
+            />
+          </div>
+
+          <button onClick={handleEditBook}>Salvar Edições</button>
+          <button onClick={handleRemoveBook}>Remover Livro</button>
+        </>
+      )}
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import { InputTypes } from '.'
-import './styles.css'
+import './Input.styles.css'
 
 export default function Input({
   label,

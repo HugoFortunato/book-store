@@ -1,4 +1,3 @@
-// src/store/bookSlice.ts
 import { createReducer } from '@reduxjs/toolkit'
 import { setIsAuthenticated } from './auth.actions'
 
