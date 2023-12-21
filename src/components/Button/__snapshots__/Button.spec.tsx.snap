@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should render a snapshot 1`] = `
+<div>
+  <button
+    class="custom-button"
+    data-testid="button-id"
+    disabled=""
+    type="submit"
+  >
+    Click me
+  </button>
+</div>
+`;

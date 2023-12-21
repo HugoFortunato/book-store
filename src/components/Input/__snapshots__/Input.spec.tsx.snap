@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> should render a snapshot 1`] = `
+<div>
+  <div
+    class="input-wrapper"
+  >
+    <label
+      for="input-id"
+    />
+    <input
+      data-testid="input-id"
+      placeholder="test"
+      type="text"
+      value="test"
+    />
+  </div>
+</div>
+`;

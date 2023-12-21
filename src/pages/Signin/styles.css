@@ -1,0 +1,25 @@
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  }
+
+  .custom-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+
+  .custom-form button {
+    width: 100%;
+    padding: 10px;
+  }
