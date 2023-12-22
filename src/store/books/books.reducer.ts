@@ -1,4 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit'
+
 import {
   createBook,
   editBook,
@@ -12,6 +13,7 @@ export type Book = {
   id: number
   title: string
   author: string
+  year: string
   image: string
   rented: boolean
 }
@@ -39,6 +41,7 @@ export const booksReducer = createReducer(initialState, (builder) => {
     const newBook: Book = {
       id: state.books.length + 1,
       title: action.payload.title,
+      year: action.payload.year || '',
       author: action.payload.author,
       image: action.payload.image,
       rented: false,

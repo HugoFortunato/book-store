@@ -1,9 +1,10 @@
-import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
+import { render } from '@testing-library/react'
 import { Provider } from 'react-redux'
-import configureStore, { MockStoreEnhanced } from 'redux-mock-store'
 import { MemoryRouter } from 'react-router-dom'
+import configureStore, { MockStoreEnhanced } from 'redux-mock-store'
+
 import RegisterBook from '.'
 
 describe('<RegisterBook />', () => {

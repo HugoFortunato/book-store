@@ -1,10 +1,18 @@
 import { render, fireEvent } from '@testing-library/react'
+
 import '@testing-library/jest-dom'
 import Button from './Button'
 
 describe('<Button />', () => {
   const Test = () => {
-    return <Button label="Click me" disabled data-testid="button-id" />
+    return (
+      <Button
+        color="#3498db"
+        label="Click me"
+        disabled
+        data-testid="button-id"
+      />
+    )
   }
 
   it('should render a snapshot', () => {
@@ -31,7 +39,9 @@ describe('<Button />', () => {
   })
 
   it('should be disabled if specified', () => {
-    const { getByRole } = render(<Button label="Click me" disabled />)
+    const { getByRole } = render(
+      <Button color="#3498db" label="Click me" disabled />,
+    )
     const buttonElement = getByRole('button')
 
     expect(buttonElement).toBeDisabled()
@@ -41,7 +51,7 @@ describe('<Button />', () => {
     const mockClickHandler = jest.fn()
 
     const { getByRole } = render(
-      <Button label="Click me" onClick={mockClickHandler} />,
+      <Button color="#3498db" label="Click me" onClick={mockClickHandler} />,
     )
     const buttonElement = getByRole('button')
 

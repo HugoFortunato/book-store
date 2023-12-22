@@ -1,11 +1,12 @@
-import { useForm, SubmitHandler, FormProvider } from 'react-hook-form'
 import './styles.css'
-import { authenticate } from '../../utils/auth'
-import { useNavigate } from 'react-router-dom'
+import { useForm, SubmitHandler, FormProvider } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
-import { setIsAuthenticated } from '../../store/auth/auth.actions'
-import Input from '../../components/Input/Input'
+import { useNavigate } from 'react-router-dom'
+
 import Button from '../../components/Button/Button'
+import Input from '../../components/Input/Input'
+import { setIsAuthenticated } from '../../store/auth/auth.actions'
+import { authenticate } from '../../utils/auth'
 
 export type IFormInput = {
   username: string

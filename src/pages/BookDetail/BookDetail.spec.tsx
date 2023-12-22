@@ -1,7 +1,8 @@
 import { render, fireEvent } from '@testing-library/react'
 import { Provider } from 'react-redux'
-import configureStore, { MockStoreEnhanced } from 'redux-mock-store'
 import { MemoryRouter } from 'react-router-dom'
+import configureStore, { MockStoreEnhanced } from 'redux-mock-store'
+
 import '@testing-library/jest-dom'
 import BookDetails from '.'
 

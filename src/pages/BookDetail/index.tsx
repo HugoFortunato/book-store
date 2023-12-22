@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+
 import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+
+import Input from '../../components/Input/Input'
 import { editBook, removeBook } from '../../store/books/books.actions'
 import { getSelectedBook } from '../../store/books/books.selectors'
-import { useNavigate } from 'react-router-dom'
-import Input from '../../components/Input/Input'
 import './BookDetail.styles.css'
 
 interface BookDetailsProps {
@@ -11,16 +13,14 @@ interface BookDetailsProps {
 }
 
 const BookDetails: React.FC<BookDetailsProps> = () => {
-  const showSelectedBook = useSelector(getSelectedBook)
-  const isBookRented = showSelectedBook?.rented
-
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
   const [editedImage, setEditedImage] = useState('')
   const [editedTitle, setEditedTitle] = useState('')
   const [editedAuthor, setEditedAuthor] = useState('')
+  const showSelectedBook = useSelector(getSelectedBook)
 
+  const isBookRented = showSelectedBook?.rented
   const handleEditBook = () => {
     if (showSelectedBook) {
       dispatch(
@@ -54,6 +54,7 @@ const BookDetails: React.FC<BookDetailsProps> = () => {
       <div>
         <p data-testid="book-title">Title: {showSelectedBook?.title}</p>
         <p data-testid="book-author">Author: {showSelectedBook?.author}</p>
+        <p data-testid="book-year">Year: {showSelectedBook?.year}</p>
       </div>
 
       {isBookRented ? (

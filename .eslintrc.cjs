@@ -9,11 +9,28 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', "eslint-plugin-import-helpers"],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
     ],
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react$/",
+          "module",
+          "/^(@/)?utils/",
+          "/^(@/)?components/",
+          "/^@/modules/",
+          "/^./schema//^./types/",
+          ["parent", "sibling", "index"],
+          "/^./styles/"
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ]
   },
 }

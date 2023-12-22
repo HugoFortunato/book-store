@@ -1,9 +1,10 @@
-import { render, fireEvent, waitFor } from '@testing-library/react'
-import { Provider } from 'react-redux'
 import '@testing-library/jest-dom'
 
-import configureStore, { MockStoreEnhanced } from 'redux-mock-store'
+import { render, fireEvent, waitFor } from '@testing-library/react'
+import { Provider } from 'react-redux'
 import { MemoryRouter } from 'react-router-dom'
+import configureStore, { MockStoreEnhanced } from 'redux-mock-store'
+
 import SignInForm from '.'
 
 interface ReduxAction {

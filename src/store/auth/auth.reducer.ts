@@ -1,4 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit'
+
 import { setIsAuthenticated } from './auth.actions'
 
 type AuthTypes = {

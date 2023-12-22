@@ -1,18 +1,19 @@
 import { useState } from 'react'
+
 import { useDispatch, useSelector } from 'react-redux'
-import { getBooks } from '../../store/books/books.selectors'
-import { rentBook, selectedBook } from '../../store/books/books.actions'
 import { useNavigate } from 'react-router-dom'
-import { Book } from '../../store/books/books.reducer'
-import Input from '../../components/Input/Input'
-import './Home.styles.css'
+
 import Button from '../../components/Button/Button'
+import Input from '../../components/Input/Input'
+import { rentBook, selectedBook } from '../../store/books/books.actions'
+import { Book } from '../../store/books/books.reducer'
+import './Home.styles.css'
+import { getBooks } from '../../store/books/books.selectors'
 
 export default function Home() {
-  const { books } = useSelector(getBooks)
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
+  const { books } = useSelector(getBooks)
   const [searchTerm, setSearchTerm] = useState('')
 
   const handleRentBook = (bookId: number) => {
@@ -55,7 +56,7 @@ export default function Home() {
       <ul>
         {filteredBooks.map((book) => (
           <li key={book.id}>
-            {book.title} - {book.author} -{' '}
+            {book.title} - {book.author}
             <div>
               <img src={book.image} alt={book.title} width={150} />
             </div>

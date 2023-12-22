@@ -4,6 +4,7 @@ import '@testing-library/jest-dom'
 import { Provider } from 'react-redux'
 import { MemoryRouter } from 'react-router-dom'
 import configureStore, { MockStoreEnhanced } from 'redux-mock-store'
+
 import Home from '.'
 
 const mockStore = configureStore()
