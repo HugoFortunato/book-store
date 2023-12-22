@@ -39,7 +39,7 @@ export default function RegisterBook() {
           <form className="custom-form" onSubmit={handleSubmit(onSubmit)}>
             <Input
               register={register('image')}
-              label="Image"
+              label="Image (url)"
               placeholder="image"
               type="text"
             />

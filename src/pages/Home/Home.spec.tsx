@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import { fireEvent, render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Provider } from 'react-redux'
@@ -12,7 +11,7 @@ const mockStore = configureStore()
 describe('<Home />', () => {
   const Test = () => {
     const initialState: { books: { books: [] } } = { books: { books: [] } }
-    const store: MockStoreEnhanced<unknown, {}> = mockStore(initialState)
+    const store: MockStoreEnhanced<unknown> = mockStore(initialState)
 
     return (
       <Provider store={store as MockStoreEnhanced}>
@@ -31,7 +30,7 @@ describe('<Home />', () => {
   })
 
   it('should call handleRentBook when "Rent" button is clicked', () => {
-    const store: MockStoreEnhanced<unknown, {}> = mockStore({
+    const store: MockStoreEnhanced<unknown> = mockStore({
       books: {
         books: [
           { id: 1, title: 'Book 1', author: 'Author 1', rented: false },

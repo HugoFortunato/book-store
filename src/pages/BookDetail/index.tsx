@@ -68,7 +68,7 @@ const BookDetails: React.FC<BookDetailsProps> = () => {
               <Input
                 type="text"
                 value={editedImage}
-                label="Book Image"
+                label="Book Image (url)"
                 placeholder="Book Image"
                 onInputChange={(value) => setEditedImage(value)}
               />

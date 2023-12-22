@@ -8,9 +8,9 @@ import SignIn from '../pages/Signin'
 import { isAuthenticated } from '../store/auth/auth.selectors'
 
 export function Router() {
-  const isAuthenticatedValue = useSelector(isAuthenticated)
+  const isUserAuthenticated = useSelector(isAuthenticated)
 
-  if (!isAuthenticatedValue) {
+  if (!isUserAuthenticated) {
     return <SignIn />
   }
 
