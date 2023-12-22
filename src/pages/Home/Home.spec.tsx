@@ -25,8 +25,8 @@ describe('<Home />', () => {
   it('should render the home page with the correct properties', () => {
     const { getByText, getByPlaceholderText } = render(<Test />)
 
-    expect(getByText('Book List')).toBeInTheDocument()
-    expect(getByPlaceholderText('Pesquisar Livros')).toBeInTheDocument()
+    expect(getByText('Book Store')).toBeInTheDocument()
+    expect(getByPlaceholderText('Search Books')).toBeInTheDocument()
   })
 
   it('should call handleRentBook when "Rent" button is clicked', () => {

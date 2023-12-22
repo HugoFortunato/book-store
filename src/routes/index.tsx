@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import Home from '../pages/Home'
 import SignIn from '../pages/Signin'
-import BookDetails from '../pages/BookDetails'
+import BookDetails from '../pages/BookDetail'
 import { useSelector } from 'react-redux'
 import { isAuthenticated } from '../store/auth/auth.selectors'
 import RegisterBook from '../pages/RegisterBook'

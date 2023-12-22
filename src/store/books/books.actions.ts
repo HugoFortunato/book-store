@@ -3,12 +3,15 @@ import { Book } from './books.reducer'
 
 export const rentBook = createAction<number>('books/rentBook')
 
-export const createBook = createAction<{ title: string; author: string }>(
-  'books/createBook',
-)
+export const createBook = createAction<{
+  title: string
+  author: string
+  image: string
+}>('books/createBook')
 
 export const editBook = createAction<{
   id: number
+  image: string
   title: string
   author: string
 }>('books/editBook')

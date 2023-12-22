@@ -30,16 +30,16 @@ describe('<BookDetails />', () => {
   it('renders book details correctly', () => {
     const { getByText } = render(<Test />)
 
-    expect(getByText('Detalhes do Livro')).toBeInTheDocument()
-    expect(getByText('Título: Test Book')).toBeInTheDocument()
-    expect(getByText('Autor: Test Author')).toBeInTheDocument()
+    expect(getByText('Book detail')).toBeInTheDocument()
+    expect(getByText('Title: Test Book')).toBeInTheDocument()
+    expect(getByText('Author: Test Author')).toBeInTheDocument()
   })
 
   it('handles edit and remove book correctly', () => {
     const { getByText } = render(<Test />)
 
-    const editButton = getByText('Salvar Edições')
-    const removeButton = getByText('Remover Livro')
+    const editButton = getByText('Save')
+    const removeButton = getByText('Remove')
 
     fireEvent.click(editButton)
     fireEvent.click(removeButton)

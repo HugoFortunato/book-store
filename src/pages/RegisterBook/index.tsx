@@ -5,7 +5,8 @@ import { createBook } from '../../store/books/books.actions'
 import Input from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
 
-export type IFormInput = {
+export type FormTypes = {
+  image: string
   title: string
   author: string
 }
@@ -14,8 +15,9 @@ export default function RegisterBook() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const methods = useForm<IFormInput>({
+  const methods = useForm<FormTypes>({
     defaultValues: {
+      image: '',
       title: '',
       author: '',
     },
@@ -23,7 +25,7 @@ export default function RegisterBook() {
 
   const { handleSubmit, register } = methods
 
-  const onSubmit: SubmitHandler<IFormInput> = (data) => {
+  const onSubmit: SubmitHandler<FormTypes> = (data) => {
     dispatch(createBook(data))
 
     navigate('/book-store')
@@ -34,6 +36,13 @@ export default function RegisterBook() {
       <FormProvider {...methods}>
         <div className="form-container">
           <form className="custom-form" onSubmit={handleSubmit(onSubmit)}>
+            <Input
+              register={register('image')}
+              label="Image"
+              placeholder="image"
+              type="text"
+            />
+
             <Input
               register={register('title')}
               label="Title"
@@ -48,7 +57,7 @@ export default function RegisterBook() {
               type="author"
             />
 
-            <Button label="Register" />
+            <Button color="#3498db" label="Register" />
           </form>
         </div>
       </FormProvider>

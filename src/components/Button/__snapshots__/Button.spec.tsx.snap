@@ -6,6 +6,7 @@ exports[`<Button /> should render a snapshot 1`] = `
     class="custom-button"
     data-testid="button-id"
     disabled=""
+    style="background-color: rgb(52, 152, 219); color: rgb(255, 255, 255); border-radius: 4px; padding: 8px 16px; cursor: pointer;"
     type="submit"
   >
     Click me

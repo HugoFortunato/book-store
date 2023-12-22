@@ -1,4 +1,3 @@
-// src/store/bookSlice.ts
 import { createReducer } from '@reduxjs/toolkit'
 import {
   createBook,
@@ -7,11 +6,13 @@ import {
   rentBook,
   selectedBook,
 } from './books.actions'
+import { books } from './books.mock'
 
 export type Book = {
   id: number
   title: string
   author: string
+  image: string
   rented: boolean
 }
 
@@ -21,10 +22,7 @@ type BookState = {
 }
 
 const initialState: BookState = {
-  books: [
-    { id: 1, title: 'Book 1', author: 'Author 1', rented: false },
-    { id: 2, title: 'Book 2', author: 'Author 2', rented: false },
-  ],
+  books,
   selectedBook: null,
 }
 
@@ -42,6 +40,7 @@ export const booksReducer = createReducer(initialState, (builder) => {
       id: state.books.length + 1,
       title: action.payload.title,
       author: action.payload.author,
+      image: action.payload.image,
       rented: false,
     }
     state.books.push(newBook)
@@ -51,6 +50,7 @@ export const booksReducer = createReducer(initialState, (builder) => {
     const book = state.books.find((b) => b.id === action.payload.id)
 
     if (book) {
+      book.image = action.payload.image
       book.title = action.payload.title
       book.author = action.payload.author
     }

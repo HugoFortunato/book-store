@@ -5,6 +5,8 @@ import { rentBook, selectedBook } from '../../store/books/books.actions'
 import { useNavigate } from 'react-router-dom'
 import { Book } from '../../store/books/books.reducer'
 import Input from '../../components/Input/Input'
+import './Home.styles.css'
+import Button from '../../components/Button/Button'
 
 export default function Home() {
   const { books } = useSelector(getBooks)
@@ -33,33 +35,43 @@ export default function Home() {
   )
 
   return (
-    <div>
-      <h1>Book List</h1>
-      <div>
-        <label>Pesquisar Livros:</label>
+    <div className="container">
+      <h1>Book Store</h1>
+
+      <div className="search-bar">
         <Input
           type="text"
           value={searchTerm}
           onInputChange={(value) => setSearchTerm(value)}
-          placeholder="Pesquisar Livros"
+          placeholder="Search Books"
+        />
+        <Button
+          color="#4caf50"
+          label="Register Book"
+          onClick={handleRegisterBook}
         />
       </div>
+
       <ul>
         {filteredBooks.map((book) => (
           <li key={book.id}>
             {book.title} - {book.author} -{' '}
-            {book.rented ? 'Rented' : 'Available'}
-            {!book.rented && (
-              <button onClick={() => handleRentBook(book.id)}>Rent</button>
-            )}
-            <button onClick={() => handleBookDetail(book.id, book)}>
-              Book Detail
-            </button>
+            <div>
+              <img src={book.image} alt={book.title} width={150} />
+            </div>
+            {book.rented ? <strong>Rented</strong> : <strong>Available</strong>}
+            <div>
+              {!book.rented && (
+                <button onClick={() => handleRentBook(book.id)}>Rent</button>
+              )}
+
+              <button onClick={() => handleBookDetail(book.id, book)}>
+                Book Detail
+              </button>
+            </div>
           </li>
         ))}
       </ul>
-
-      <button onClick={handleRegisterBook}>Register Book</button>
     </div>
   )
 }

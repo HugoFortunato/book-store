@@ -54,7 +54,7 @@ export default function SignInForm() {
               type="password"
             />
 
-            <Button label="Submit" />
+            <Button color=" #3498db" label="Submit" />
           </form>
         </div>
       </FormProvider>

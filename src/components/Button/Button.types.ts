@@ -5,4 +5,5 @@ export type ButtonTypes = {
   children?: ReactNode
   disabled?: boolean
   onClick?: () => void
+  color: string
 }
